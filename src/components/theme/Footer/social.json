@@ -1,0 +1,14 @@
+[
+  {
+    "id": 0,
+    "name": "Github",
+    "link": "https://github.com/KamilPieronczyk",
+    "icon": "/icons/github.svg"
+  },
+  {
+    "id": 1,
+    "name": "Facebook",
+    "link": "https://www.facebook.com/kamil.pieronczyk/",
+    "icon": "/icons/twitter.svg"
+  }
+]

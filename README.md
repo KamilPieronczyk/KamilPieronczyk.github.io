@@ -1,99 +1,117 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby's hello-world starter
-</h1>
+# Portfolio for developers
 
-Kick off your project with this hello-world boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/settings?s=https%3A%2F%2Fgithub.com%2Fsmakosh%2Fgatsby-portfolio-dev&c=1&env=GATSBY_PORTFOLIO_GITHUB_TOKEN%2CGATSBY_PORTFOLIO_FORMIK_ENDPOINT%2CGATSBY_PORTFOLIO_RECAPTCHA_KEY&envDescription=Required%20to%20fetch%20your%20repositories%20from%20GitHub&envLink=https://github.com/smakosh/gatsby-portfolio-dev&framework=nextjs)
 
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
+[![Powered by Vercel](./powered-by-vercel.svg)](https://vercel.com?utm_source=smakosh)
 
-## 🚀 Quick start
+## Theme
 
-1.  **Create a Gatsby site.**
+[Gatsby-theme-portfolio](https://github.com/smakosh/gatsby-theme-portfolio)
 
-    Use the Gatsby CLI to create a new site, specifying the hello-world starter.
+## Features
 
-    ```shell
-    # create a new Gatsby site using the hello-world starter
-    gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
-    ```
+- Eslint/Prettier configured
+- Scores 100% on a11y / Performance / PWA / SEO
+- PWA (desktop & mobile)
+- Easy to customize
+- Nice project structure
+- Amazing illustrations by [Undraw.co](https://undraw.co)
+- Tablet & mobile friendly
+- Continuous deployment with [Vercel](https://vercel.com/?utm_source=smakosh)
+- Or with Netlify, check [Netlify branch](https://github.com/smakosh/gatsby-portfolio-dev/tree/netlify)
+- A contact form protected by Google Recaptcha
+- Can be deployed with one click
+- Functional components with ~~Recompose~~ React Hooks! ~~ready to migrate to React hooks!~~
+- Fetches your Github pinned projects with most stars (You could customize this if you wish)
+- One click deployment to Vercel
 
-1.  **Start developing.**
+## Design
 
-    Navigate into your new site’s directory and start it up.
+Project on [Behance](https://www.behance.net/gallery/74172961/Free-Gatsby-portfolio-for-developers)
 
-    ```shell
-    cd my-hello-world-starter/
-    gatsby develop
-    ```
+## Structure
 
-1.  **Open the source code and start editing!**
+```bash
+.
+├── data
+│   └── config              # SEO related tags
+├── src
+│   └── assets              # Assets
+│   │   │── icons             # icons
+│   │   │── illustrations     # illustrations from (undraw.co)
+│   │   └── thumbnail         # cover of your website when it's shared to social media
+│   ├── components          # Components
+│   │   │── common            # Common components
+│   │   │── landing           # Components used on the landing page
+│   │   └── theme             # Header & Footer
+│   └── pages               # Pages
+└── static                  # favicon & Netlify redirects
+```
 
-    Your site is now running at `http://localhost:8000`!
+## Prerequisites
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+### Online
 
-    Open the `my-hello-world-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+1. Create an account at [Formik](https://formik.com/?utm_source=smakosh) and grab your form endpoint url
+2. Grab a Google recaptcha key from [Google Recaptcha](https://www.google.com/recaptcha/admin)
+3. Grab your Github token from [GitHub](https://github.com/settings/tokens/new?scopes=repo&description=portfolio-dev)
+4. Click [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/settings?s=https%3A%2F%2Fgithub.com%2Fsmakosh%2Fgatsby-portfolio-dev&c=1&env=GATSBY_PORTFOLIO_GITHUB_TOKEN%2CGATSBY_PORTFOLIO_FORMIK_ENDPOINT%2CGATSBY_PORTFOLIO_RECAPTCHA_KEY&envDescription=Required%20to%20fetch%20your%20repositories%20from%20GitHub&envLink=https://github.com/smakosh/gatsby-portfolio-dev&framework=nextjs) and pass in your:
+  
+  - Formik form endpoint
+  - Google recaptcha public key
+  - Github token
 
-## 🧐 What's inside?
+To Env variables section.
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+### Locally
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+1. Create an account at [Formik](https://formik.com/?utm_source=smakosh)
+2. Install [Yarn](https://yarnpkg.com/en/)
+3. Grab a Google recaptcha key from [Google Recaptcha](https://www.google.com/recaptcha/admin)
+4. Grab your Github token from GitHub
+5. Run `cp .env.development.template .env.development`
+6. Run `yarn && yarn start`
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+> You could run `vercel env pull` to get your env variables from Vercel.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+### Deploying locally to Vercel
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+I highly recommend that you push to GitHub/GitLab and deploy your repository to Vercel instead or just hit the Deploy button.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+### Clean the cache
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
+This removes the `.cache/` & `public/` folders
 
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
+```bash
+yarn reset
+```
 
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
+## Built with
 
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
+- Adobe XD
+- Gatsby
+- React & GraphQL
+- Formik
+- Google recaptcha
+- VSCode
+- And these useful of JavaScript libraries & Gatsby plugins [package.json](package.json)
 
-9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
+## License
 
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+## Contributors
 
-12. **`README.md`**: A text file containing useful reference information about your project.
+- [Ajay NS](https://github.com/ajayns) https://github.com/smakosh/gatsby-portfolio-dev/pull/3
+- [Ryan Lee](https://github.com/drdgvhbh) https://github.com/smakosh/gatsby-portfolio-dev/pull/6
+- [David](https://github.com/davidavz) https://github.com/smakosh/gatsby-portfolio-dev/pull/8
+- [Léu Almeida](https://github.com/LeuAlmeida) https://github.com/smakosh/gatsby-portfolio-dev/pull/21
+- [Kudakwashe Mupeni](https://github.com/2wce) https://github.com/smakosh/gatsby-portfolio-dev/pull/20
+- [sasannnn](https://github.com/sasannnn) https://github.com/smakosh/gatsby-portfolio-dev/pull/22
+- [Michael Seifarth](https://github.com/Kageetai) https://github.com/smakosh/gatsby-portfolio-dev/pull/27
+- [Hugo](https://github.com/Kronicom) https://github.com/smakosh/gatsby-portfolio-dev/pull/34 https://github.com/smakosh/gatsby-portfolio-dev/pull/35
+- [Smakosh](https://smakosh.com)
 
-## 🎓 Learning Gatsby
+## Support
 
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-hello-world)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+If you love this Gatsby template and want to support me, you can do so through my GitHub profile.
