@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.stop-color-light {
+  stop-color: #f0f4f8;
+}
+
+.stop-color-light-end {
+  stop-color: #d9e2ec;
+}
+
+.stop-opacity-light {
+  stop-opacity: 0.8;
+}
+
+.stop-opacity-light-end {
+  stop-opacity: 0.2;
+}
+
+.dark .stop-color-dark {
+  stop-color: #1f2937;
+}
+
+.dark .stop-color-dark-end {
+  stop-color: #111827;
+}
+
+.dark .stop-opacity-dark {
+  stop-opacity: 0.8;
+}
+
+.dark .stop-opacity-dark-end {
+  stop-opacity: 0.2;
+}
+
+.stop-color-light,
+.stop-color-light-end,
+.stop-opacity-light,
+.stop-opacity-light-end,
+.dark .stop-color-dark,
+.dark .stop-color-dark-end,
+.dark .stop-opacity-dark,
+.dark .stop-opacity-dark-end {
+  transition: all 0.3s ease-in-out;
+}
+
