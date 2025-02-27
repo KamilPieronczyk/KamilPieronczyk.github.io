@@ -1,20 +1,23 @@
-import type { Metadata } from 'next'
-import './globals.css'
+"use client";
 
-export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.dev',
-}
+import type React from "react";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+import "./globals.css";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import Background from "@/components/Background";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} dark:bg-zinc-900 dark:text-zinc-100 transition-colors duration-300`}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Background />
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
-  )
+  );
 }

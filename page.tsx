@@ -1,26 +1,26 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, ExternalLink, Briefcase, Globe, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
-import dynamic from "next/dynamic"
-import { SiNextdotjs, SiReact, SiAngular, SiNestjs, SiDotnet, SiMysql, SiMongodb } from "react-icons/si"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, ExternalLink, Briefcase, Globe, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+import { SiNextdotjs, SiReact, SiAngular, SiNestjs, SiDotnet, SiMysql, SiMongodb } from "react-icons/si";
 
 const ParticleBackground = dynamic(() => import("./components/ParticleBackground"), {
   ssr: false,
   loading: () => <div className="fixed inset-0 bg-zinc-100 dark:bg-zinc-900" />,
-})
+});
 
 export default function Portfolio() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <div className="min-h-screen bg-white/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-zinc-100 selection:bg-zinc-900 selection:text-white dark:selection:bg-zinc-100 dark:selection:text-zinc-900 transition-colors duration-300">
@@ -35,32 +35,22 @@ export default function Portfolio() {
             </div>
           </motion.div>
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => setTheme((theme) => (theme === "dark" ? "light" : "dark"))}
             className="p-2 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 transition-colors duration-300"
           >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
         </header>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-16"
-        >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2, duration: 0.5 }} className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">About</h2>
           <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-            I&apos;ve been working in IT since 2021, specializing in full-stack development. I build robust, scalable
-            applications with modern technologies and best practices.
+            I&apos;ve been working in IT since 2021, specializing in full-stack development. I build robust, scalable applications with modern technologies and
+            best practices.
           </p>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-16"
-        >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.5 }} className="mt-16">
           <h2 className="text-2xl font-semibold mb-6">Tech Stack</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <TechCard Icon={SiNextdotjs} title="Next.js" />
@@ -73,12 +63,7 @@ export default function Portfolio() {
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.35, duration: 0.5 }}
-          className="mt-16"
-        >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.35, duration: 0.5 }} className="mt-16">
           <h2 className="text-2xl font-semibold mb-6">Projects</h2>
           <div className="space-y-4">
             <ProjectCard
@@ -90,24 +75,14 @@ export default function Portfolio() {
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-16"
-        >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4, duration: 0.5 }} className="mt-16">
           <h2 className="text-2xl font-semibold mb-6">Work Experience</h2>
           <div className="space-y-4">
             <ExperienceCard company="Euvic" position="Fullstack Developer" period="Since 2021" />
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.45, duration: 0.5 }}
-          className="mt-16"
-        >
+        <motion.section initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45, duration: 0.5 }} className="mt-16">
           <h2 className="text-2xl font-semibold mb-6">Contact</h2>
           <div className="space-y-4">
             <motion.a
@@ -153,7 +128,7 @@ export default function Portfolio() {
         </motion.footer>
       </div>
     </div>
-  )
+  );
 }
 
 function TechCard({ Icon, title }) {
@@ -166,7 +141,7 @@ function TechCard({ Icon, title }) {
       <Icon className="w-12 h-12 mb-3 text-zinc-700 dark:text-zinc-300" />
       <h3 className="font-medium text-center">{title}</h3>
     </motion.div>
-  )
+  );
 }
 
 function ProjectCard({ title, description, technologies, link }) {
@@ -193,16 +168,13 @@ function ProjectCard({ title, description, technologies, link }) {
       <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-3">{description}</p>
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech, index) => (
-          <span
-            key={index}
-            className="px-2 py-1 bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded text-xs"
-          >
+          <span key={index} className="px-2 py-1 bg-zinc-100 dark:bg-zinc-700 text-zinc-700 dark:text-zinc-300 rounded text-xs">
             {tech}
           </span>
         ))}
       </div>
     </motion.div>
-  )
+  );
 }
 
 function ExperienceCard({ company, position, period }) {
@@ -219,6 +191,5 @@ function ExperienceCard({ company, position, period }) {
       <p className="text-zinc-600 dark:text-zinc-400">{position}</p>
       <p className="text-zinc-500 dark:text-zinc-500 text-sm">{period}</p>
     </motion.div>
-  )
+  );
 }
-
