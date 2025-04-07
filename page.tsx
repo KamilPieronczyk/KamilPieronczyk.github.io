@@ -69,7 +69,7 @@ export default function Portfolio() {
             <ProjectCard
               title="Hotel Olympic"
               description="Official website for Hotel Olympic with booking capabilities."
-              technologies={["Next.js", "Strapi", "AWS"]}
+              technologies={["Next.js", "Strapi", "AWS", "DigitalOcean", "Postgres"]}
               link="https://hotelolympic.pl"
             />
           </div>
